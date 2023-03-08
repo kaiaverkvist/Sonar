@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Sonar\Sonar.csproj" />
+      <ProjectReference Include="..\Averkvist.Sonar\Averkvist.Sonar.csproj" />
     </ItemGroup>
 
 </Project>

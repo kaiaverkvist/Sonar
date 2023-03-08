@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sonar", "Sonar\Sonar.csproj", "{96A37AED-F6C2-4139-8B8A-2660E90CDCAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Averkvist.Sonar", "Averkvist.Sonar\Averkvist.Sonar.csproj", "{96A37AED-F6C2-4139-8B8A-2660E90CDCAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sonar.Tests", "Sonar.Tests\Sonar.Tests.csproj", "{EAD26672-6B4F-4999-B92E-1F45A64C8960}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Averkvist.Sonar.Tests", "Averkvist.Sonar.Tests\Averkvist.Sonar.Tests.csproj", "{EAD26672-6B4F-4999-B92E-1F45A64C8960}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sonar.Example.EchoServer", "Sonar.Example.EchoServer\Sonar.Example.EchoServer.csproj", "{09C21308-FC8C-46D2-B6AC-B5C3FECAC5B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Averkvist.Sonar.Example.EchoServer", "Averkvist.Sonar.Example.EchoServer\Averkvist.Sonar.Example.EchoServer.csproj", "{09C21308-FC8C-46D2-B6AC-B5C3FECAC5B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sonar.Example.EchoClient", "Sonar.Example.EchoClient\Sonar.Example.EchoClient.csproj", "{0EBCF203-E42A-4A4B-A0A9-FD867BD509D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Averkvist.Sonar.Example.EchoClient", "Averkvist.Sonar.Example.EchoClient\Averkvist.Sonar.Example.EchoClient.csproj", "{0EBCF203-E42A-4A4B-A0A9-FD867BD509D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
