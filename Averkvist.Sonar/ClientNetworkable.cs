@@ -23,16 +23,17 @@ public class ClientNetworkable : BaseNetworkable, IListenable
         _listener.PeerConnectedEvent += OnPeerConnectedEvent;
         _listener.NetworkErrorEvent += OnNetworkErrorEvent;
         #endregion
+        
     }
 
     private void OnPeerConnectedEvent(NetPeer peer)
     {
-        Router.ManualTrigger(null, new ClientConnected());
+        Router.ManualTrigger(peer.Client(_serializer), new ClientConnected());
     }
 
     private void OnPeerDisconnectedEvent(NetPeer peer, DisconnectInfo disconnectinfo)
     {
-        Router.ManualTrigger(null, new ClientDisconnected(disconnectinfo.Reason));
+        Router.ManualTrigger(peer.Client(_serializer), new ClientDisconnected(disconnectinfo.Reason));
     }
 
     private void OnNetworkErrorEvent(IPEndPoint endpoint, SocketError error)
