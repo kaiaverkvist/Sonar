@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 using LiteNetLib;
+using Sonar.Builtin;
 using Sonar.Configuration;
 using Sonar.Extensions;
 
@@ -18,13 +19,25 @@ public class ClientNetworkable : BaseNetworkable, IListenable
         #region Set up events
         _listener.ConnectionRequestEvent += (request) => request.Reject(); // Clients always reject!
         _listener.NetworkReceiveEvent += OnNetReceive;
+        _listener.PeerDisconnectedEvent += OnPeerDisconnectedEvent;
+        _listener.PeerConnectedEvent += OnPeerConnectedEvent;
         _listener.NetworkErrorEvent += OnNetworkErrorEvent;
         #endregion
     }
 
+    private void OnPeerConnectedEvent(NetPeer peer)
+    {
+        Router.ManualTrigger(null, new ClientConnected());
+    }
+
+    private void OnPeerDisconnectedEvent(NetPeer peer, DisconnectInfo disconnectinfo)
+    {
+        Router.ManualTrigger(null, new ClientDisconnected(disconnectinfo.Reason));
+    }
+
     private void OnNetworkErrorEvent(IPEndPoint endpoint, SocketError error)
     {
-        Router.Trigger(null, error);
+        Router.ManualTrigger(null, error);
     }
 
     private void OnNetReceive(NetPeer peer, NetPacketReader reader, byte channel, DeliveryMethod deliveryMethod)
